@@ -1,14 +1,14 @@
-#Sergey Z Blog Environment
+# Sergey Z Blog Environment
 
-##Quickstart
+## Quickstart
 
 run `npm install` to install all dependencies.
 
 run `npm start` to start a file server that listens on port 3000
 
-##Description
+## Description
 
-##TODO
+## TODO
   1. Add simple front page, with links to `about` and `posts`
   2. Add template parser
   3. Add sass preprocessing
@@ -24,10 +24,10 @@ run `npm start` to start a file server that listens on port 3000
   13. Add publish plugin
   14. Add robots.txt file generation
 
-##DONE
+## DONE
 
 
-##NOTES
+## NOTES
 
 main/
   about
