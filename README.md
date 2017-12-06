@@ -9,23 +9,25 @@ run `npm start` to start a file server that listens on port 3000
 ##Description
 
 ##TODO
-  1. Add simple front page, with links to `about` and `posts`
-  2. Add template parser
-  3. Add sass preprocessing
-  4. Add server to server assets (use meltasmith-server)
-  5. Add watchers for src files
-  6. Use excerpts plugin to list articles with first paragraph
-  7. Add about, main, contact
-  8. Integrate with contntful plugin
-  9. Add disqus comment widgets plugin
-  10. Add google analytics plugin
-  11. Add metalsmith-js-packer
-  12. Implement search
-  13. Add publish plugin
-  14. Add robots.txt file generation
+  * Add simple front page, with links to `about` and `posts`
+  * Add sass preprocessing
+  * Add server to server assets (use meltasmith-server)
+  * Add watchers for src files
+  * Use excerpts plugin to list articles with first paragraph
+  * Add about, main, contact
+  * Integrate with contntful plugin
+  * Add disqus comment widgets plugin
+  * Add google analytics plugin
+  * Add metalsmith-js-packer
+  * Implement search
+  * Add publish plugin
+  * Add robots.txt file generation
+  * Add metalsmith-metadata to share data for templates
 
 ##DONE
 
+  * Add template parser
+  * Add bootstrap and bootstrap materiala
 
 ##NOTES
 
@@ -34,5 +36,19 @@ main/
   contact
   articles
   article
+
+Articles page needs:
+
+1. Header and navigation.
+2. List of all the posts
+
+Individual post page needs:
+
+1. Header and navigation.
+2. Content of the post
+
+
+
+
 
 

@@ -1,12 +1,18 @@
 const
   metalsmith = require('metalsmith'),
   markdown = require('metalsmith-markdown'),
-  templates = require('metalsmith-templates'),
+  layouts = require('metalsmith-layouts'),
   collections = require('metalsmith-collections'),
+  sass = require('metalsmith-sass'),
+  copyMdBootstrap = require('./utils/copy-md-bootstrap'),
   permalinks = require('metalsmith-permalinks');
+
 
 metalsmith(__dirname)
   .use(markdown())
+  .use(sass({
+    outputDir: 'css/'
+  }))
   .use(collections({
     pages: {
       pattern: 'content/pages/*.md'
@@ -21,6 +27,9 @@ metalsmith(__dirname)
 //  .use(permalinks({
 //    pattern: ':collections/:title'
 //  }))
-  .use(templates('pug'))
+  .use(layouts({
+    engine: 'pug'
+  }))
+  .use(copyMdBootstrap())
   .destination('./build')
   .build((err) => err ? console.log(err) : null);//must give it a callback
