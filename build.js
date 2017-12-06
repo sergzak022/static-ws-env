@@ -5,11 +5,24 @@ const
   collections = require('metalsmith-collections'),
   sass = require('metalsmith-sass'),
   copyMdBootstrap = require('./utils/copy-md-bootstrap'),
-  permalinks = require('metalsmith-permalinks');
+  permalinks = require('metalsmith-permalinks'),
+  metadata = require('metalsmith-metadata'),
+  serve = require('metalsmith-serve'),
+  watch = require('metalsmith-watch');
 
 
 metalsmith(__dirname)
-  .use(markdown())
+  .use(watch({
+    pats: {
+      'src/**/*': true
+    },
+    livereload: true
+  }))
+  .use(markdown({
+    site: {
+      title: 'Sergey Z. Blog'
+    }
+  }))
   .use(sass({
     outputDir: 'css/'
   }))
@@ -28,8 +41,13 @@ metalsmith(__dirname)
 //    pattern: ':collections/:title'
 //  }))
   .use(layouts({
-    engine: 'pug'
+    engine: 'pug',
+    pretty: true
   }))
   .use(copyMdBootstrap())
+  .use(serve({
+    port: 3000,
+    verbose: true
+  }))
   .destination('./build')
   .build((err) => err ? console.log(err) : null);//must give it a callback
