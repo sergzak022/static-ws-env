@@ -1,12 +1,12 @@
-#Sergey Z Blog Environment
+# Sergey Z Blog Environment
 
-##Quickstart
+## Quickstart
 
 run `npm install` to install all dependencies.
 
 run `npm start` to start a file server that listens on port 3000
 
-##Description
+## Description
 
 ##TODO
   * Add simple front page, with links to `about` and `posts`
@@ -24,12 +24,12 @@ run `npm start` to start a file server that listens on port 3000
   * Add robots.txt file generation
   * Add metalsmith-metadata to share data for templates
 
-##DONE
+## DONE
 
   * Add template parser
   * Add bootstrap and bootstrap materiala
 
-##NOTES
+## NOTES
 
 main/
   about
