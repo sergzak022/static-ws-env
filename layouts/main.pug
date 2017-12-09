@@ -1,0 +1,19 @@
+doctype html
+html
+  include includes/index-head.pug
+  body.container-fluid
+    #main-row.row
+      #main-col.col-xs-12.col-lg-8.offset-lg-2
+        #header.row
+          h1 This is my header 1
+        #navigation.row.navbar.justify-content-center
+          ul.nav
+            li.nav-item.mx-2
+              a.nav-lin.active posts
+            li.nav-item.mx-2
+              a.nav-lin about
+            li.nav-item.mx-2
+              a.nav-lin contact
+        #content.row
+          block content
+        include includes/footer.pug
