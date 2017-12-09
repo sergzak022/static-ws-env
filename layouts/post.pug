@@ -2,12 +2,14 @@ doctype html
 html
   include includes/head.pug
   h1=title
-  body
-    #main.container-fluid
-      #header.row
-        h1 This is my header
-      #navigation.row
-        span about | posts | contact
-      #content!= contents
-  include includes/footer.pug
+  h1 hey
+  body.container-fluid
+    #main-row.row
+      #main-col(class="col-xs-12 col-lg-8 offset-md-2")
+        #header.row
+          h1 This is my header
+        #navigation.row
+          span about | posts | contact
+        #content!= contents
+        include includes/footer.pug
 
