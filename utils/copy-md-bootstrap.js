@@ -36,10 +36,10 @@ module.exports = function copyMdBootstrap() {
         ])
       });
 
-    let cpFonts$ = mkdirp('build/fonts')
+    let cpFonts$ = mkdirp('build/font/roboto')
       .then(() => {
         return bb.all([
-          cp('node_modules/mdbootstrap/fonts/*', 'build/fonts/*'),
+          cp('node_modules/mdbootstrap/font/roboto/*', 'build/font/roboto'),
         ])
       });
 
