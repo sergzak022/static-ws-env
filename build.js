@@ -13,8 +13,11 @@ const
 
 metalsmith(__dirname)
   .use(watch({
-    pats: {
-      'src/**/*': true
+    paths: {
+      'src/**/*': true,
+       //if value of 'layouts/**/*' set to true,
+       //reload triggers but build is not populated for some reason
+      'layouts/**/*': "**/*.md"
     },
     livereload: true
   }))
@@ -47,7 +50,8 @@ metalsmith(__dirname)
   .use(copyMdBootstrap())
   .use(serve({
     port: 3000,
-    verbose: true
+    verbose: true,
+    cache: 0
   }))
   .destination('./build')
   .build((err) => err ? console.log(err) : null);//must give it a callback

@@ -21,6 +21,7 @@ run `npm start` to start a file server that listens on port 3000
   * Add robots.txt file generation
   * Add metalsmith-metadata to share data for templates
   * clean up build.js and add configurations file for it
+  * add subscription
 
 ## DONE
 
@@ -32,21 +33,23 @@ run `npm start` to start a file server that listens on port 3000
 
 ## NOTES
 
+Need 4 pages: index ( posts ), about, contact, post.
+I'll create a main template with a head and a body.
+Body will have header, nav, content, footer.
+
+Posts will insert posts in the main template content section.
+Posts should extend main, and replace content block
+
+
+structure
+
+posts
+
 main/
   about
   contact
   articles
   article
-
-Articles page needs:
-
-1. Header and navigation.
-2. List of all the posts
-
-Individual post page needs:
-
-1. Header and navigation.
-2. Content of the post
 
 
 
