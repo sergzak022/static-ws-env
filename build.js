@@ -8,7 +8,8 @@ const
   permalinks = require('metalsmith-permalinks'),
   metadata = require('metalsmith-metadata'),
   serve = require('metalsmith-serve'),
-  watch = require('metalsmith-watch');
+  watch = require('metalsmith-watch'),
+  debug = require('metalsmith-debug');
 
 
 metalsmith(__dirname)
@@ -21,14 +22,6 @@ metalsmith(__dirname)
     },
     livereload: true
   }))
-  .use(markdown({
-    site: {
-      title: 'Sergey Z. Blog'
-    }
-  }))
-  .use(sass({
-    outputDir: 'css/'
-  }))
   .use(collections({
     pages: {
       pattern: 'content/pages/*.md'
@@ -39,10 +32,17 @@ metalsmith(__dirname)
       reverse: true
     }
   }))
-  .use(markdown()) //must go before permalinks
-//  .use(permalinks({
-//    pattern: ':collections/:title'
-//  }))
+  .use(markdown({ //must go before permalinks
+    site: {
+      title: 'Sergey Z. Blog'
+    }
+  }))
+  .use(sass({
+    outputDir: 'css/'
+  }))
+  .use(permalinks({
+    pattern: ':collections/:title'
+  }))
   .use(layouts({
     engine: 'pug',
     pretty: true
@@ -54,4 +54,5 @@ metalsmith(__dirname)
     cache: 0
   }))
   .destination('./build')
+  .use(debug())
   .build((err) => err ? console.log(err) : null);//must give it a callback
