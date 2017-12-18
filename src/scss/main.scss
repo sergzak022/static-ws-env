@@ -1,7 +1,13 @@
 body {
   #header {
-    background-color: #2BBBAD;
-    height: 120px;
+    .user-picture-row {
+      background-color: salmon;
+      height: 320px;
+    }
+    .name-row {
+      background-color: #2BBBAD;
+      height: 80px;
+    }
   }
   #navigation {
     background-color: #4285f4;

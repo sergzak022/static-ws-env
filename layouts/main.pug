@@ -1,6 +1,4 @@
-//mixin links(collection)
-//  each val in collection
-//    p=val.title
+include ./mixins/navigation.pug
 
 doctype html
 html
@@ -8,17 +6,14 @@ html
   body.container-fluid
     #main-row.row
       #main-col.col-xs-12.col-lg-8.offset-lg-2
-        #header.row
-          .col.d-flex.justify-content-center.align-items-center
-            h1 Sergey Zakharchenko
+        #header
+          .row.user-picture-row
+          .row.name-row
+            .col.d-flex.justify-content-center.align-items-center
+              h1 Sergey Zakharchenko
+
         #navigation.row.navbar.justify-content-center
-          ul.nav
-            li.nav-item.mx-2
-              a.nav-lin.active posts
-            li.nav-item.mx-2
-              a.nav-lin about
-            li.nav-item.mx-2
-              a.nav-lin contact
+          +navigation(name)
         #content.row
           block content
         include includes/footer.pug
